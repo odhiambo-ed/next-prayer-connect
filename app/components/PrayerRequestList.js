@@ -14,43 +14,49 @@ export default function PrayerRequestList() {
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {requests
-                    .slice((currentPage - 1) * requestsPerPage, currentPage * requestsPerPage)
-                    .map((request) => (
-                        <PrayerRequestCard key={request.id} request={request} onPray={handlePrayerCount} />
-                    ))}
-            </div>
+            {requests.length === 0 ? (
+                <p className="text-center text-gray-500 my-8">No prayer requests yet. Be the first to submit one!</p>
+            ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {requests
+                        .slice((currentPage - 1) * requestsPerPage, currentPage * requestsPerPage)
+                        .map((request) => (
+                            <PrayerRequestCard key={request.id} request={request} onPray={handlePrayerCount} />
+                        ))}
+                </div>
+            )}
 
-            <Pagination className="mt-8">
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationPrevious
-                            href="#"
-                            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                            className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-                    {[...Array(totalPages)].map((_, i) => (
-                        <PaginationItem key={i}>
-                            <PaginationLink
+            {totalPages > 1 && (
+                <Pagination className="mt-8">
+                    <PaginationContent>
+                        <PaginationItem>
+                            <PaginationPrevious
                                 href="#"
-                                onClick={() => setCurrentPage(i + 1)}
-                                isActive={currentPage === i + 1}
-                            >
-                                {i + 1}
-                            </PaginationLink>
+                                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                                className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''}
+                            />
                         </PaginationItem>
-                    ))}
-                    <PaginationItem>
-                        <PaginationNext
-                            href="#"
-                            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                            className={currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+                        {[...Array(totalPages)].map((_, i) => (
+                            <PaginationItem key={i}>
+                                <PaginationLink
+                                    href="#"
+                                    onClick={() => setCurrentPage(i + 1)}
+                                    isActive={currentPage === i + 1}
+                                >
+                                    {i + 1}
+                                </PaginationLink>
+                            </PaginationItem>
+                        ))}
+                        <PaginationItem>
+                            <PaginationNext
+                                href="#"
+                                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                                className={currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}
+                            />
+                        </PaginationItem>
+                    </PaginationContent>
+                </Pagination>
+            )}
         </>
     )
 }
