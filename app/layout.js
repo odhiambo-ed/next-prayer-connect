@@ -1,14 +1,17 @@
+import { Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({ subsets: ['latin'] })
+
 export const metadata = {
-  title: 'Prayer App',
-  description: 'A place for sharing and receiving prayers',
+  title: 'PrayerConnect',
+  description: 'Share and connect through prayer',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-purple-50`}>{children}</body>
     </html>
   )
 }
