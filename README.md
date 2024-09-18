@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Sneak Peek
 
-## Getting Started
+![Preview](pass-gen.gif)
 
-First, run the development server:
+# React Secure Password Generator
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Description
+
+>PrayerConnect is a web application designed to bring people together through the power of prayer. It provides a platform for users to anonymously submit prayer requests and pray for others, fostering a supportive online community.
+
+## Live Demo Link
+
+[Project Live Link](https://next-prayer-connect-8su5zfhw9-white3ds-projects.vercel.app)
+
+
+## 🛠️ Built With
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [GSAP](https://greensock.com/gsap/)
+- [Lucide React](https://lucide.dev/)
+
+## 🌟 Key Features
+
+- Anonymous prayer request submissions
+- Interactive prayer cards with real-time prayer counters
+- Soothing background music player
+- Responsive design for all devices
+- Social sharing capabilities
+
+## Get Started
+
+### Run
+
+```
+To get a clone of the project, run `https://github.com/odhiambo-ed/next-prayer-connect.git`
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+cd /next-prayer-connect
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+npm run dev
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author(s)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <a href="https://github.com/odhiambo-ed" target="blank"><img align="center"
+        src="https://github.com/white3d/GitHub-User-Content/blob/main/Passport_Ed-M.png"
+        alt="Edward" height="80" width="80"/></a>   **Edward Odhiambo**
 
-## Deploy on Vercel
+- GitHub: [@whit3d](https://github.com/odhiambo-ed)
+- Twitter: [@odhiambo_ed](https://twitter.com/odhiambo_ed)
+- LinkedIn: [Edward Odhiambo](https://www.linkedin.com/in/edward-odhiambo/)
+- Portfolio: [Edward Odhiambo](https://edwardodhiambo.com/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions, issues, and feature requests are welcome!!!
+
+Feel free to check the [issues page]https://github.com/odhiambo-ed/next-prayer-connect/issues)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Special thanks to [React](https://react.dev/) for the amazing vanilla JavaScript framework project. I am grateful for your talent and generosity in sharing your work with the community.
+
+## 📝 License
+
+This project is [MIT](https://github.com/white3d/GitHub-User-Content/blob/main/LICENSE) licensed.
+
