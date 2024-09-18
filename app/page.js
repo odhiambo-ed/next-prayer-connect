@@ -1,9 +1,9 @@
-import Navigation from '../components/Navigation'
-import AudioPlayer from '../components/AudioPlayer'
-import Hero from '../components/Hero'
-import PrayerRequestList from '../components/PrayerRequestList'
-import ShareButtons from '../components/ShareButtons'
-import Footer from '../components/Footer'
+import Navigation from './components/Navigation'
+import AudioPlayer from './components/AudioPlayer'
+import Hero from './components/Hero'
+import PrayerRequestList from './components/PrayerRequestList'
+import ShareButtons from './components/ShareButtons'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
