@@ -1,30 +1,34 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export function usePrayerRequests() {
-    const [requests, setRequests] = useState(Array.from({ length: 40 }, (_, i) => ({
-        id: i + 1,
-        text: `Prayer request ${i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
-        prayerCount: Math.floor(Math.random() * 10)
-    })))
+    const [requests, setRequests] = useState([])
 
-    const handlePrayerCount = (id) => {
-        setRequests(requests.map(req =>
-            req.id === id ? { ...req, prayerCount: req.prayerCount + 1 } : req
-        ))
+    useEffect(() => {
+        // Load existing prayers from localStorage on component mount
+        const storedPrayers = localStorage.getItem('prayerRequests')
+        if (storedPrayers) {
+            setRequests(JSON.parse(storedPrayers))
+        }
+    }, [])
+
+    const addPrayerRequest = (newRequest) => {
+        const updatedRequests = [
+            { id: Date.now(), text: newRequest, prayerCount: 0 },
+            ...requests
+        ]
+        setRequests(updatedRequests)
+        localStorage.setItem('prayerRequests', JSON.stringify(updatedRequests))
     }
 
-    return { requests, handlePrayerCount }
-}
+    const handlePrayerCount = (id) => {
+        const updatedRequests = requests.map(req =>
+            req.id === id ? { ...req, prayerCount: req.prayerCount + 1 } : req
+        )
+        setRequests(updatedRequests)
+        localStorage.setItem('prayerRequests', JSON.stringify(updatedRequests))
+    }
 
-// This file can contain functions for managing prayer requests
-// For example:
-
-export function getPrayerRequests() {
-  // Fetch prayer requests from an API or database
-}
-
-export function submitPrayerRequest(request) {
-  // Submit a new prayer request
+    return { requests, addPrayerRequest, handlePrayerCount }
 }
