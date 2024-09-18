@@ -1,9 +1,14 @@
-import Image from "next/image";
+import Hero from './components/Hero'
+import PrayerForm from './components/PrayerForm'
+import PrayerRequestList from './components/PrayerRequestList'
 
 export default function Home() {
   return (
-    <div>
-      <h1>Jesus did it again</h1>
-    </div>
-  );
+    <main>
+      <Hero />
+      <PrayerForm />
+      <PrayerRequestList />
+    </main>
+  )
 }
+
