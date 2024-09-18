@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Play, Pause } from 'lucide-react'
 
 export default function AudioPlayer() {
-    const [isPlaying, setIsPlaying] = useState(true)
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [audioError, setAudioError] = useState(false)
     const audioRef = useRef(null)
 
     useEffect(() => {
@@ -19,7 +20,10 @@ export default function AudioPlayer() {
             if (isPlaying) {
                 audioRef.current.pause()
             } else {
-                audioRef.current.play()
+                audioRef.current.play().catch(error => {
+                    console.error("Error playing audio:", error)
+                    setAudioError(true)
+                })
             }
             setIsPlaying(!isPlaying)
         }
@@ -34,14 +38,16 @@ export default function AudioPlayer() {
                     size="sm"
                     onClick={togglePlay}
                     className="text-white hover:text-purple-200"
+                    disabled={audioError}
                 >
                     {isPlaying ? <Pause size={20} /> : <Play size={20} />}
                 </Button>
             </div>
-            <audio ref={audioRef} loop autoPlay>
-                <source src="/placeholder.mp3" type="audio/mpeg" />
+            <audio ref={audioRef} loop>
+                <source src="../Holy-Communion.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
             </audio>
+            {audioError && <p className="text-red-300 text-xs mt-2">Failed to load audio file. Please check the file path.</p>}
         </div>
     )
 }
