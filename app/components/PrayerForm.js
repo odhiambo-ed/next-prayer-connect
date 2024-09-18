@@ -2,17 +2,18 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Button } from "../../components/ui/button"
-import { Textarea } from "../../components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import { usePrayerRequests } from '../lib/prayerRequests'
 
 export default function PrayerForm() {
     const [newRequest, setNewRequest] = useState("")
+    const { addPrayerRequest } = usePrayerRequests()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (newRequest.trim()) {
-            // Here you would typically send the new request to your backend
-            console.log("New prayer request:", newRequest)
+            addPrayerRequest(newRequest.trim())
             setNewRequest("")
         }
     }
