@@ -25,7 +25,7 @@ export default function Hero() {
         <motion.div
             className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
             style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1445905595283-21f8ae8a33d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80')",
+                backgroundImage: "url('https://images.unsplash.com/photo-1593526613712-7b4b9a707330?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
                 opacity
             }}
         >
