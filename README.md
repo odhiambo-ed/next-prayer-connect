@@ -1,6 +1,6 @@
 ## Sneak Peek
 
-![Preview](pass-gen.gif)
+![Preview](prayer.gif)
 
 # React Secure Password Generator
 
@@ -68,7 +68,7 @@ npm run dev
 
 Contributions, issues, and feature requests are welcome!!!
 
-Feel free to check the [issues page]https://github.com/odhiambo-ed/next-prayer-connect/issues)
+Feel free to check the [issues page](https://github.com/odhiambo-ed/next-prayer-connect/issues)
 
 ## Show your support
 
